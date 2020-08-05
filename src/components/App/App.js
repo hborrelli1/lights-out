@@ -41,10 +41,10 @@ function App() {
       let firstColumnValues = [0, 5, 10, 15, 20];
       let fifthColumnValues = [4, 9, 14, 19 ,24];
 
-      if (fifthColumnValues.includes(i)) {
-        squaresToToggle.push(i + 5, i - 1, i - 5);
-      } else if (firstColumnValues.includes(i)) {
+      if (firstColumnValues.includes(i)) {
         squaresToToggle.push(i + 1, i + 5, i - 5);
+      } else if (fifthColumnValues.includes(i)) {
+        squaresToToggle.push(i + 5, i - 1, i - 5);
       } else {
         squaresToToggle.push(i - 1, i + 1, i + 5, i - 5);
       }
