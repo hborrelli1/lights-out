@@ -19,36 +19,3 @@ header p {
   max-width:800px;
   margin: 0 auto;
 }
-
-.victory-container {
-  position:absolute;
-  top:0px;
-  width:100vw;
-  height:100vh;
-  background-color:#000;
-  display:flex;
-  justify-content: center;
-  align-items:center;
-  color:#fff;
-}
-
-.victory-container .victory-card h2 {
-  font-size:3rem;
-  margin-bottom:10px;
-}
-
-.victory-container .victory-card h3 {
-  font-size:2rem;
-  margin-bottom:20px;
-}
-
-.victory-container .victory-card p {
-  font-size:1.25rem;
-  margin-bottom:20px;
-}
-
-.victory-container .victory-card p span {
-  font-size:150%;
-  margin-bottom:20px;
-
-}

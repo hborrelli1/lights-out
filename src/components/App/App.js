@@ -3,11 +3,12 @@ import './App.css';
 
 import { v4 as uuidv4 } from 'uuid';
 import { GameBoard } from '../GameBoard/GameBoard';
+import { VictoryCard } from '../VictoryCard/VictoryCard';
 
 function App() {
   const [squares, setSquares] = useState([]);
   const [moveCount, setMoveCount] = useState(0);
-  const [gameWon , setGameWon] = useState(true);
+  const [gameWon , setGameWon] = useState(false);
 
   const randomizeSquares = () => {
     let gameSquares = new Array(25);
@@ -96,17 +97,7 @@ function App() {
           <p>Number of moves: {moveCount}</p>
           <button onClick={resetGame}>Reset Game</button>
         </section>
-        {gameWon && (
-          <div className="victory-container">
-            <div className="victory-card">
-              <h2>Congratulations!!!</h2>
-              <h3>You won!</h3>
-              <p>You were successfully able to turn all the lights off to win the game!</p>
-              <p>It took you <span>{moveCount}</span> moves to solve the puzzle.</p>
-              <button onClick={() => resetGame()}>Try again?</button>
-            </div>
-          </div>
-        )}
+        {gameWon && <VictoryCard moveCount={moveCount} resetGame={resetGame} />}
       </main>
     </div>
   );
