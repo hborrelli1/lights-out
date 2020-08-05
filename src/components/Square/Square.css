@@ -3,7 +3,11 @@
   height:52px;
   margin-right:10px;
   margin-bottom:10px;
-  background-color:#999;
+  background-color:#797979;
+}
+
+.square:hover {
+  cursor:pointer;
 }
 
 .square:nth-child(5n) {
@@ -11,5 +15,5 @@
 }
 
 .square.lights-on {
-  background-color:yellow;
+  background-color:#ECEC94;
 }
