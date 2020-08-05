@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 
 import App from './App';
 
-describe('App Test', () => {
+describe('App Unit Tests', () => {
   it('should render app to DOM', () => {
     const { getByText } = render(<App />)
 

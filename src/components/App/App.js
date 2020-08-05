@@ -8,7 +8,7 @@ import { VictoryCard } from '../VictoryCard/VictoryCard';
 function App() {
   const [squares, setSquares] = useState([]);
   const [moveCount, setMoveCount] = useState(0);
-  const [gameWon , setGameWon] = useState(false);
+  const [gameWon , setGameWon] = useState(true);
 
   const randomizeSquares = () => {
     let gameSquares = new Array(25);

@@ -8,7 +8,7 @@ export const VictoryCard = ({ moveCount, resetGame }) => {
         <h2>Congratulations!!!</h2>
         <h3>You won!</h3>
         <p>You were successfully able to turn all the lights off to win the game!</p>
-        <p>It took you <span>{moveCount}</span> moves to solve the puzzle.</p>
+        <p>It took you <span data-testid="move-counter">{moveCount}</span> moves to solve the puzzle.</p>
         <button onClick={() => resetGame()}>Try again?</button>
       </div>
     </section>
