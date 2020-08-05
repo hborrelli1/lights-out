@@ -1,4 +1,5 @@
 import React from 'react';
+import './GameBoard.css';
 
 import { Square } from '../Square/Square';
 
@@ -6,8 +7,8 @@ export const GameBoard = ({ squares }) => {
   const squaresDisplay = squares.map(square => <Square />)
 
   return (
-    <div>
+    <section className="game-board">
       { squaresDisplay }
-    </div>
+    </section>
   )
 }
