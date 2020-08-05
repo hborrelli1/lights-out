@@ -7,6 +7,7 @@ import { GameBoard } from '../GameBoard/GameBoard';
 function App() {
   const [squares, setSquares] = useState([]);
   const [moveCount, setMoveCount] = useState(0);
+  const [gameWon , setGameWon] = useState(true);
 
   const randomizeSquares = () => {
     let gameSquares = new Array(25);
@@ -62,11 +63,21 @@ function App() {
     let adjacentSquares = calculateAdjacentSquares(indexOfClickedSquare);
     toggleSquareValues(adjacentSquares);
     setSquares(squaresData);
+    determineVictory()
   }
 
   const resetGame = () => {
+    setGameWon(false)
     randomizeSquares();
     setMoveCount(0);
+  }
+
+  const determineVictory = () => {
+    // show victory container with winning stats.
+    let winningLogic = (square) => square.lightsOn === false;
+    let gameWon = squares.every(winningLogic);
+    console.log('game won: ', gameWon)
+    setGameWon(gameWon)
   }
 
   useEffect(() => {
@@ -85,6 +96,16 @@ function App() {
           <p>Number of moves: {moveCount}</p>
           <button onClick={resetGame}>Reset Game</button>
         </section>
+        {gameWon && (
+          <div className="victory-container">
+            <div className="victory-card">
+              <h2>Congratulations!!!</h2>
+              <h3>You won!</h3>
+              <p>You solved the game in {moveCount} moves!</p>
+              <button onClick={() => resetGame()}>Try again?</button>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
