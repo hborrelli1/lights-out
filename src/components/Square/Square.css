@@ -9,3 +9,7 @@
 .square:nth-child(5n) {
   margin-right:0px;
 }
+
+.square.lights-on {
+  background-color:yellow;
+}
