@@ -6,6 +6,7 @@ import { GameBoard } from '../GameBoard/GameBoard';
 
 function App() {
   const [squares, setSquares] = useState([]);
+  const [moveCount, setMoveCount] = useState(0);
 
   const randomizeSquares = () => {
     let gameSquares = new Array(25);
@@ -33,6 +34,9 @@ function App() {
       </header>
       <main>
         <GameBoard squares={squares} />
+        <section className="game-meta">
+          Number of moves: {moveCount}
+        </section>
       </main>
     </div>
   );
