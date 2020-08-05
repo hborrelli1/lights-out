@@ -101,7 +101,8 @@ function App() {
             <div className="victory-card">
               <h2>Congratulations!!!</h2>
               <h3>You won!</h3>
-              <p>You solved the game in {moveCount} moves!</p>
+              <p>You were successfully able to turn all the lights off to win the game!</p>
+              <p>It took you <span>{moveCount}</span> moves to solve the puzzle.</p>
               <button onClick={() => resetGame()}>Try again?</button>
             </div>
           </div>
