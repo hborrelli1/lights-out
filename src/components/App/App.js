@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 import { GameBoard } from '../GameBoard/GameBoard';
 
 function App() {
+  const [squares, setSquares] = useState([]);
+
+  const randomizeSquares = () => {
+    let gameSquares = new Array(25);
+    gameSquares = gameSquares.fill(0);
+    let gameSquaresWithValue = gameSquares.map(square => (
+      {
+        lightsOn: !!Math.floor(Math.random() * 2)
+      }
+    ))
+    console.log(gameSquaresWithValue);
+
+    setSquares(gameSquaresWithValue)
+  }
+
+  useEffect(() => {
+    randomizeSquares();
+  }, [])
+
   return (
     <div className="App">
       <header>
@@ -12,7 +31,7 @@ function App() {
       </header>
       <main>
         <section className="game-board">
-          <GameBoard />
+          <GameBoard squares={squares} />
         </section>
       </main>
     </div>
