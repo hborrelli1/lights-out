@@ -3,10 +3,12 @@ import './App.css';
 
 import { v4 as uuidv4 } from 'uuid';
 import { GameBoard } from '../GameBoard/GameBoard';
+import { VictoryCard } from '../VictoryCard/VictoryCard';
 
 function App() {
   const [squares, setSquares] = useState([]);
   const [moveCount, setMoveCount] = useState(0);
+  const [gameWon , setGameWon] = useState(false);
 
   const randomizeSquares = () => {
     let gameSquares = new Array(25);
@@ -62,11 +64,21 @@ function App() {
     let adjacentSquares = calculateAdjacentSquares(indexOfClickedSquare);
     toggleSquareValues(adjacentSquares);
     setSquares(squaresData);
+    determineVictory()
   }
 
   const resetGame = () => {
+    setGameWon(false)
     randomizeSquares();
     setMoveCount(0);
+  }
+
+  const determineVictory = () => {
+    // show victory container with winning stats.
+    let winningLogic = (square) => square.lightsOn === false;
+    let gameWon = squares.every(winningLogic);
+    console.log('game won: ', gameWon)
+    setGameWon(gameWon)
   }
 
   useEffect(() => {
@@ -85,6 +97,7 @@ function App() {
           <p>Number of moves: {moveCount}</p>
           <button onClick={resetGame}>Reset Game</button>
         </section>
+        {gameWon && <VictoryCard moveCount={moveCount} resetGame={resetGame} />}
       </main>
     </div>
   );

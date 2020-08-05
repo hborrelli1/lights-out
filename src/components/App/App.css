@@ -1,12 +1,15 @@
 .App {
   text-align: center;
+  position:relative;
+  height:100vh;
+  display:flex;
+  flex-flow:column;
 }
 
 header {
   background-color:#444;
   padding:30px 20px;
   color:#f1f1f1;
-  margin-bottom:30px;
 }
 
 header h1 {
@@ -17,4 +20,35 @@ header p {
   width:100%;
   max-width:800px;
   margin: 0 auto;
+}
+
+main {
+  background-color:#333;
+  flex-grow:1;
+  padding-top:50px;
+}
+
+.game-meta {
+  display:flex;
+  flex-flow:wrap;
+  justify-content: space-between;
+  align-items:center;
+  width:100%;
+  max-width:300px;
+  margin:20px auto;
+}
+
+.game-meta p {
+  color:#fff;
+  font-weight:600;
+  letter-spacing:.5px;
+}
+
+.game-meta button {
+  padding:10px 20px;
+  border:0;
+  background-color:#797979;
+  color:#fff;
+  font-weight:600;
+  letter-spacing:.5px;
 }
