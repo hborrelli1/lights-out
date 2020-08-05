@@ -19,25 +19,16 @@ function App() {
         lightsOn: !!Math.floor(Math.random() * 2)
       }
     ))
-    console.log(gameSquaresWithValue);
 
     setSquares(gameSquaresWithValue)
   }
 
   const toggleSquares = (id) => {
-    // capture current square (id? index?)
-    // calculate adjacent squares
-      // add 1 & 5
-      // Subtract 1 & 5
-      // If adjacent square index is < 0 or > 24 ignore.
-      // create array of values to toggle
-      // pass array into function that toggles square
-      // toggle all adjacent squares
-      // update state.
     setMoveCount(moveCount + 1);
     let squaresData = [...squares];
     let indexOfClickedSquare = squaresData.findIndex(square => square.id === id);
 
+    // i represents the index of clicked square
     const calculateAdjacentSquares = (i) => {
       let squaresToToggle = [i];
       let firstColumnValues = [0, 5, 10, 15, 20];
@@ -74,10 +65,8 @@ function App() {
   }
 
   const determineVictory = () => {
-    // show victory container with winning stats.
     let winningLogic = (square) => square.lightsOn === false;
     let gameWon = squares.every(winningLogic);
-    console.log('game won: ', gameWon)
     setGameWon(gameWon)
   }
 
