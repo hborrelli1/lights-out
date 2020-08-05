@@ -8,6 +8,7 @@ export const Square = ({ square, toggleSquares }) => {
     <div 
       className={`square ${squareStyle}`}
       onClick={() => toggleSquares(square.id)}
+      data-testid="game-tile"
     ></div>
   )
 }
