@@ -3,8 +3,8 @@ import './GameBoard.css';
 
 import { Square } from '../Square/Square';
 
-export const GameBoard = ({ squares }) => {
-  const squaresDisplay = squares.map(square => <Square square={square} />)
+export const GameBoard = ({ squares, toggleSquares }) => {
+  const squaresDisplay = squares.map(square => <Square square={square} toggleSquares={toggleSquares} />)
 
   return (
     <section className="game-board">

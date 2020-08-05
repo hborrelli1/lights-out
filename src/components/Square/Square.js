@@ -1,12 +1,13 @@
 import React from 'react';
 import './Square.css';
 
-export const Square = ({ square }) => {
+export const Square = ({ square, toggleSquares }) => {
   const squareStyle = square.lightsOn ? 'lights-on' : '';
 
   return (
-    <div className={`square ${squareStyle}`}>
-      
-    </div>
+    <div 
+      className={`square ${squareStyle}`}
+      onClick={() => toggleSquares(square.id)}
+    ></div>
   )
 }
