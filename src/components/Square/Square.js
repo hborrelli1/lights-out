@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './Square.css';
 
 export const Square = () => {
   return (
-    <div>
-      Square
+    <div className="square">
+      
     </div>
   )
 }
