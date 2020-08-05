@@ -22,6 +22,11 @@ function App() {
     setSquares(gameSquaresWithValue)
   }
 
+  const resetGame = () => {
+    randomizeSquares();
+    setMoveCount(0);
+  }
+
   useEffect(() => {
     randomizeSquares();
   }, [])
@@ -35,7 +40,8 @@ function App() {
       <main>
         <GameBoard squares={squares} />
         <section className="game-meta">
-          Number of moves: {moveCount}
+          <p>Number of moves: {moveCount}</p>
+          <button onClick={resetGame}>Reset Game</button>
         </section>
       </main>
     </div>
