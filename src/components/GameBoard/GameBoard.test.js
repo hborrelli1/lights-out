@@ -4,7 +4,6 @@ import { render, fireEvent } from '@testing-library/react';
 import { GameBoard } from './GameBoard';
 import { sampleData } from '../../sampleData/sampleSquares';
 
-
 describe('GameBoard', () => {
   let mockRender;
   let mockSquareData;
