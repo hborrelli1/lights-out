@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
+import { v4 as uuidv4 } from 'uuid';
 import { GameBoard } from '../GameBoard/GameBoard';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
     gameSquares = gameSquares.fill(0);
     let gameSquaresWithValue = gameSquares.map(square => (
       {
+        id: uuidv4(),
         lightsOn: !!Math.floor(Math.random() * 2)
       }
     ))

@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-export const GameBoard = () => {
+import { Square } from '../Square/Square';
+
+export const GameBoard = ({ squares }) => {
+  const squaresDisplay = squares.map(square => <Square />)
+
   return (
     <div>
-      Gameboard.
+      { squaresDisplay }
     </div>
   )
 }
