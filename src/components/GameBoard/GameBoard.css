@@ -1,0 +1,8 @@
+.game-board {
+  width:100%;
+  max-width:300px;
+  max-height:300px;
+  display: flex;
+  flex-flow:wrap;
+  margin:0 auto;
+}
