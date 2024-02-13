@@ -7,10 +7,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - React Testing Library
 - Jest
 
+### Requirements 
+- Node v16
+
 ### Instructions
-- Fork or clone the repo
-- Run `npm install`
-- To run tests, run `npm test`
+- Fork or clone the repo.
+- Run `npm install`.
+- Run `npm run start` to run the app locally.
+- To run tests, run `npm test`.
 
 ### Future Iterations
 - Add Integration Tests
